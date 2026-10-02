@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
 export default defineConfig({
+  base: '/keep/',
   plugins: [
     react(),
     VitePWA({
@@ -13,9 +14,10 @@ export default defineConfig({
         name: 'Keep',
         short_name: 'Keep',
         description: 'Private relationship memory aid',
-        theme_color: '#0f172a',
-        background_color: '#0f172a',
+        theme_color: '#fafaf9',
+        background_color: '#fafaf9',
         display: 'standalone',
+        start_url: '/keep/',
         icons: [
           {
             src: 'pwa-64x64.png',
