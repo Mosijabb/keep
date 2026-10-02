@@ -1,0 +1,47 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f8fafc; /* Slate 50 */
+    --surface: #ffffff;
+    --primary: #4f46e5; /* Indigo 600 */
+    --text: #0f172a; /* Slate 900 */
+    --muted: #64748b; /* Slate 500 */
+    --border: #e2e8f0; /* Slate 200 */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0f172a; /* Slate 900 */
+      --surface: #1e293b; /* Slate 800 */
+      --primary: #6366f1; /* Indigo 500 */
+      --text: #f8fafc; /* Slate 50 */
+      --muted: #94a3b8; /* Slate 400 */
+      --border: #334155; /* Slate 700 */
+    }
+  }
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    -webkit-tap-highlight-color: transparent;
+    @apply antialiased min-h-[100dvh] w-full overflow-x-hidden;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--primary) 22%, transparent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
